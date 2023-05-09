@@ -1,0 +1,31 @@
+.root {
+    -fx-background-color: white;
+}
+.header {
+    -fx-font-size: 20;
+    -fx-text-fill: #461c90;
+}
+.value-label {
+    -fx-font-size: 18;
+    -fx-text-fill: #461c90;
+
+}
+.value {
+    -fx-font-size: 14;
+    -fx-text-fill: #461c90;
+}
+.input{
+    -fx-text-fill: #311465;
+}
+.button {
+    -fx-background-color: #461c90;
+    -fx-text-fill: white;
+}
+.radio-button:selected .radio {
+    -fx-background-color: #461c90;
+    -fx-background-insets: 0;
+}
+.radio-button{
+    -fx-padding: 5px;
+}
+

@@ -1,0 +1,75 @@
+.root {
+    -fx-background-color: white;
+}
+.header {
+    -fx-font-size: 20;
+    -fx-text-fill: #461c90;
+}
+.value-label {
+    -fx-font-size: 18;
+    -fx-text-fill: #461c90;
+
+}
+.value {
+    -fx-font-size: 14;
+    -fx-text-fill: #461c90;
+}
+.value-desc {
+    -fx-font-size: 12;
+    -fx-text-fill: #461c90;
+}
+.input{
+    -fx-text-fill: #311465;
+}
+.button {
+    -fx-background-color: #461c90;
+    -fx-text-fill: white;
+}
+.radio-button:selected .dot {
+    -fx-background-color: #461c90;
+    -fx-background-insets: 0;
+}
+
+.default-color0.chart-series-line { -fx-stroke: #b195d2; }
+.default-color1.chart-series-line{ -fx-stroke: #311465; }
+
+.default-color0.chart-line-symbol { -fx-background-color: #b195d2, white; }
+.default-color1.chart-line-symbol { -fx-background-color: #311465, white; }
+
+.chart-title {
+    -fx-text-fill: #461c90;
+    -fx-font-size: 1.6em;
+}
+
+.axis-label {
+    -fx-text-fill: #461c90;
+}
+.chart-plot-background {
+    -fx-background-color: #ffff;
+}
+.chart-vertical-grid-lines {
+    -fx-stroke: #b6a9d6;
+}
+.chart-horizontal-grid-lines {
+    -fx-stroke:  #b6a9d6;
+}
+.chart-alternative-row-fill {
+    -fx-fill: #e5e0f0;
+    -fx-stroke: transparent;
+    -fx-stroke-width: 0;
+}
+.axis-tick-mark {
+    -fx-stroke: #461c90;
+    -fx-stroke-width: 3;
+}
+.axis-minor-tick-mark {
+    -fx-stroke: #7961b4;
+}
+
+.axis {
+    -fx-font-size: 1.4em;
+    -fx-tick-label-fill: #7961b4;
+    -fx-font-family: Tahoma;
+    -fx-tick-length: 20;
+    -fx-minor-tick-length: 10;
+}

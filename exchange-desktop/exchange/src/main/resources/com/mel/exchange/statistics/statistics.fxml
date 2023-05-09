@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.chart.LineChart?>
+
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.VBox?>
+<GridPane fx:controller="com.mel.exchange.statistics.Statistics" xmlns:fx="http://javafx.com/fxml"
+          alignment="center" hgap="10"
+          vgap="10" prefHeight="600.0" prefWidth="700.0" stylesheets="@statistics.css">
+
+
+    <GridPane hgap="10.0" prefHeight="150.0" prefWidth="400.0" styleClass="inner" vgap="10.0" GridPane.columnSpan="4">
+        <Label prefHeight="44.0" prefWidth="254.0" styleClass="header" text="Exchange Rate Statistics" textAlignment="CENTER" GridPane.columnSpan="2" GridPane.halignment="CENTER" />
+        <Label styleClass="value-label" text="Buy USD Rate" GridPane.columnIndex="0" GridPane.rowIndex="4">
+            <GridPane.margin>
+                <Insets />
+            </GridPane.margin>
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label styleClass="value" fx:id="buyUsdRateLabel"  text="Buy USD Rate" GridPane.columnIndex="0" GridPane.rowIndex="5">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+
+        <Label styleClass="value-label" text="Sell USD Rate" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+        <Label styleClass="value" fx:id="sellUsdRateLabel" text="Sell Rate" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+
+        <Separator orientation="HORIZONTAL" GridPane.RowIndex="6" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+
+        <Label styleClass="value-label" text="Change Buy Between Yesterday and Today" GridPane.columnIndex="0" GridPane.rowIndex="7">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label  styleClass="value"  fx:id="brChange" text="No Change Today" GridPane.columnIndex="0" GridPane.rowIndex="8">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+
+        <Label styleClass="value-label" text="Change Sell Between Yesterday and Today" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <Label fx:id="srChange" styleClass="value" text="No Change Today" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+
+        <Separator orientation="HORIZONTAL" GridPane.RowIndex="9" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+
+        <Label styleClass="value-label" text="Change Buy One Month Ago" GridPane.columnIndex="0" GridPane.rowIndex="10">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+
+        <Label fx:id="brChangeM" styleClass="value" text="No Change Today" GridPane.columnIndex="0" GridPane.rowIndex="11">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+
+        <Label styleClass="value-label" text="Change Sell One Month Ago" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+        <Label fx:id="srChangeM" styleClass="value" text="No Change Today" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+
+        <Separator orientation="HORIZONTAL" GridPane.RowIndex="12" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+
+        <Label styleClass="value-label" text="Max Buy USD" GridPane.columnIndex="0" GridPane.rowIndex="13">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label fx:id="maxBuy" styleClass="value" text="Max Buy Rate" GridPane.columnIndex="0" GridPane.rowIndex="14">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label fx:id="maxBuyDate" styleClass="value" text="Day is" GridPane.columnIndex="0" GridPane.rowIndex="15">
+            <padding>
+                <Insets left="15.0" />
+            </padding>
+        </Label>
+
+        <Label styleClass="value-label" text="Max Sell USD" GridPane.columnIndex="1" GridPane.rowIndex="13" />
+        <Label fx:id="maxSell" styleClass="value" text="Max Sell Rate" GridPane.columnIndex="1" GridPane.rowIndex="14" />
+        <Label fx:id="maxSellDate" styleClass="value" text="Day is" GridPane.columnIndex="1" GridPane.rowIndex="15" />
+
+        <Separator orientation="HORIZONTAL" GridPane.RowIndex="16" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+
+        <Label styleClass="value-label" text="Min Buy USD" GridPane.columnIndex="0" GridPane.rowIndex="17">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label fx:id="minBuy" styleClass="value" text="Min Buy Rate" GridPane.columnIndex="0" GridPane.rowIndex="18">
+            <padding>
+                <Insets left="15.0" />
+            </padding></Label>
+        <Label fx:id="minBuyDate" styleClass="value" text="Day is" GridPane.columnIndex="0" GridPane.rowIndex="19">
+            <padding>
+                <Insets left="15.0" />
+            </padding>
+        </Label>
+
+        <Label styleClass="value-label" text="Min Sell USD" GridPane.columnIndex="1" GridPane.rowIndex="17" />
+        <Label fx:id="minSell" styleClass="value" text="Min Sell Rate" GridPane.columnIndex="1" GridPane.rowIndex="18" />
+        <Label fx:id="minSellDate" styleClass="value" text="Day is" GridPane.columnIndex="1" GridPane.rowIndex="19" />
+        <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints />
+        </rowConstraints>
+    </GridPane>
+    <columnConstraints>
+        <ColumnConstraints />
+        <ColumnConstraints prefWidth="700" />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints prefHeight="400" />
+    </rowConstraints>
+
+    <LineChart fx:id="graph" GridPane.rowIndex="1" GridPane.columnSpan="2">
+        <xAxis>
+            <CategoryAxis side="BOTTOM" fx:id="xAxis"/>
+        </xAxis>
+        <yAxis>
+            <NumberAxis side="LEFT" fx:id="yAxis"/>
+        </yAxis>
+    </LineChart>
+
+</GridPane>

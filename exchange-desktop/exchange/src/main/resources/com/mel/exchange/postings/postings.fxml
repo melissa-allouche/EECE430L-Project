@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.mel.exchange.requests.Requests"
+          prefHeight="400.0" prefWidth="500.0" alignment="center" stylesheets="@postings.css">
+
+    <VBox spacing="5">
+        <Label styleClass="header" text="Exchange Rate Requests"
+               textAlignment="CENTER" GridPane.columnSpan="3"
+               GridPane.halignment="CENTER"
+        />
+
+        <Label styleClass="value-label"  text="Your Wallet"
+               GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+        <Label styleClass="value"  text="USD" fx:id="usdWallet"
+                   GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+        <Label styleClass="value"  text="LBP" fx:id="lbpWallet"
+                   GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+
+        <Label styleClass="value"  text="Amount"
+               GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+        <TextField styleClass="input" fx:id="amountTextField" GridPane.columnIndex="0" GridPane.rowIndex="5"/>
+
+        <GridPane>
+            <Label styleClass="value" text="Transaction Type" GridPane.columnIndex="0" GridPane.rowIndex="6" >
+            <padding>
+                <Insets right="15.0" />
+            </padding></Label>
+            <RadioButton styleClass="radio-button" text="Sell" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                <toggleGroup>
+                    <ToggleGroup fx:id="postingType" />
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton styleClass="radio-button" text="Buy" toggleGroup="$postingType" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+        </GridPane>
+
+        <GridPane>
+            <Label styleClass="value"  text="Transaction Input"
+                   GridPane.columnIndex="0" GridPane.rowIndex="7">
+                <padding>
+                    <Insets right="15.0" />
+                </padding></Label>
+            <RadioButton styleClass="radio-button" text="USD" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                <toggleGroup>
+                    <ToggleGroup fx:id="postingInputType"/>
+                </toggleGroup>
+            </RadioButton>
+            <RadioButton styleClass="radio-button" text="LBP" toggleGroup="$postingInputType" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+        </GridPane>
+
+        <Label styleClass="value"  text="Location"
+               GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+        <TextField styleClass="input" fx:id="locationTextField" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+        <Button styleClass="button" text="Post Request" GridPane.columnIndex="0" GridPane.rowIndex="10" onAction="#addPosting"/>
+
+        <Separator orientation="HORIZONTAL" GridPane.RowIndex="11" GridPane.columnIndex="0" GridPane.columnSpan="2" />
+
+        <Label styleClass="value"  text="Request ID"
+                   GridPane.columnIndex="0" GridPane.rowIndex="12"/>
+        <TextField styleClass="input" fx:id="chosenID" GridPane.columnIndex="0" GridPane.rowIndex="13"/>
+        <Button styleClass="button" text="Accept" GridPane.columnIndex="0" GridPane.rowIndex="14" onAction="#acceptPosting"/>
+
+        <TableView fx:id="tableView" AnchorPane.bottomAnchor="5"
+                   AnchorPane.leftAnchor="5" AnchorPane.rightAnchor="5"
+                   AnchorPane.topAnchor="5">
+            <columns>
+                <TableColumn text="Request ID" fx:id="requestID" prefWidth="50"/>
+                <TableColumn text="Sell" fx:id="sellOrBuy"
+                             prefWidth="100"/>
+                <TableColumn text="USD" fx:id="usdOrLbp"
+                             prefWidth="100"/>
+                <TableColumn text="Amount" fx:id="amount"
+                             prefWidth="150"/>
+                <TableColumn text="Location" fx:id="location" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </VBox>
+
+</GridPane>
